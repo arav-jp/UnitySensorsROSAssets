@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7658985665522525012}
   m_RootOrder: 0
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -110,6 +112,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 883738434325995032}
   m_Father: {fileID: 0}
@@ -128,7 +131,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 1
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -140,10 +143,10 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 26.991467
+  field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 100
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -171,9 +174,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image:
-    publish: 0
-    topicName: 
-    frameId: 
+    publish: 1
+    topicName: azure_image
+    frameId: azure_kinect
   _pointcloud:
     publish: 1
     topicName: /azure_kinect/points
@@ -194,11 +197,12 @@ MonoBehaviour:
   _depthShader: {fileID: 7200000, guid: 14a87c666328f3546b1d4db6ec3c920b, type: 3}
   _resolution: {x: 512, y: 512}
   _quality: 100
+  _verticalFOV: 60
   _minDistance: 0.02
   _maxDistance: 10
   _noise_sigma: 0.01
   _scanRate: 30
-  _drawPoints: 1
+  _drawPoints: 0
   _pointSize: 0.1
   isInit: 0
   useImage: 0
